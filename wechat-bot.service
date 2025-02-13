@@ -1,0 +1,18 @@
+[Unit]
+Description=WeChat Bot Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/wechat_bot
+Environment="PATH=/root/wechat_bot/venv/bin"
+ExecStart=/root/wechat_bot/venv/bin/gunicorn -w 4 -b 0.0.0.0:8889 \
+--timeout 120 \
+--workers 4 \
+--threads 2 \
+--worker-class=gthread \
+main:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
