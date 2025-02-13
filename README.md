@@ -78,8 +78,8 @@ sudo cp wechat-bot.service /etc/systemd/system/
 # 修改服务文件中的路径
 sudo vim /etc/systemd/system/wechat-bot.service
 # 需要修改:
-# WorkingDirectory=/path/to/wx-chat
-# ExecStart=/path/to/python /path/to/wx-chat/main.py
+# WorkingDirectory=/path/to/wechat-bot
+# ExecStart=/path/to/python /path/to/wechat-bot/main.py
 
 # 重载服务
 sudo systemctl daemon-reload
